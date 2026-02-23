@@ -1,0 +1,37 @@
+This is a readme fine for the prompt:
+https://github.com/araman1-dev/AEO-Score-Agent.git
+I would like to create a new project called AEO-Score-Agent in my Github. In this project, I would like to create an Agent that when invoked will ask for the link to a website and when the user enters the URL, then the agent will need to do a few core things: crawl a given URL (and its subpages), parse the HTML, inspect structured data, analyze content quality, and use libraries like requests, BeautifulSoup or scrapy for crawling, extruct or json-ld parsers for schema extraction, and optionally an LLM call to evaluate content quality and conversational ton and then score each factor. 
+Here are the details of the AEO Readiness Checklist & Scoring Framework:
+
+Below is a checklist organized into categories. Each item has a suggested weight so you can roll up a final score of 1–10.
+
+1. Structured Data / Schema Markup (25 points)
+CheckPointsFAQ schema present on relevant pages5HowTo schema present where applicable4Speakable schema present (voice assistant readiness)4Article or NewsArticle schema on blog/content pages3Organization or LocalBusiness schema on homepage3BreadcrumbList schema present2Product/Review schema (if e-commerce)2No schema validation errors (test via Google Rich Results)2
+
+2. Content Structure & Answer Readiness (25 points)
+CheckPointsPages contain clear, direct answers near the top of the content5Use of question-based H2/H3 headers (e.g., "What is X?" "How do I Y?")5Concise paragraph answers (40–60 words) following each question header5FAQ sections present on key pages4Use of numbered lists and step-by-step formatting for process content3Content uses natural, conversational language (not just keyword-stuffed)3
+
+3. E-E-A-T Signals (20 points)
+CheckPointsAuthor bylines present with bio/credentials4Author schema markup linking to author profile3Clear "About Us" page with organization credentials3Citations, sources, or external links to authoritative references3Content includes publication and last-updated dates4Trust signals present (awards, certifications, partnerships)3
+
+4. Technical & Metadata (15 points)
+CheckPointsPage titles are clear and question/answer-friendly3Meta descriptions are concise and written as direct answers3Canonical tags properly set2Pages load fast (under 3 seconds)3Mobile-friendly / responsive design2HTTPS enabled2
+
+5. Semantic & NLP Readiness (10 points)
+CheckPointsContent covers topic entities thoroughly (not just target keywords)3Use of natural language question phrasing throughout content3Internal linking connects related topics logically2Alt text on images is descriptive and contextual2
+
+6. Voice Search Readiness (5 points)
+CheckPointsSpeakable schema identifies the most answer-worthy passages2Content is written at a conversational reading level (aim for Grade 8 or below)2Short, direct sentences used in key answer sections1
+
+Scoring Conversion (Total out of 100 → Score of 1–10)
+Just divide the total raw score by 10 to get your 1–10 AEO readiness score. For example, a site that scores 73 out of 100 gets a 7.3 AEO score.
+You can also add letter grades:
+
+9–10: AEO-optimized
+7–8.9: Good, minor gaps
+5–6.9: Moderate readiness, significant room to improve
+3–4.9: Low readiness
+1–2.9: Not AEO-ready
+
+Implementation Tips
+For automated checks, most of the structured data, metadata, and technical items can be fully automated with code. For content quality checks (conversational tone, answer directness, E-E-A-T signals), you'll get much better results by passing the extracted page text to an LLM and asking it to score those specific dimensions. That hybrid approach — code for the technical layer, LLM for the content layer — will give you the most accurate and actionable scores. 
